@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'sinatra/reloader'
 
 get '/' do
   pass if params[:number] == nil
@@ -12,9 +11,9 @@ end
 
 get '/' do
   pass if params[:number] != nil
+
   erb :index, :locals =>{:result => ""}
 end
-
 
 def caesar_cipher(string, num)
   newstring = ''
